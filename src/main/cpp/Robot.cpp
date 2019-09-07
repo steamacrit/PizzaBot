@@ -7,14 +7,13 @@
 
 #include "Robot.h"
 #include "RobotMap.h"
-#include "Lua.h"
+
 #include <iostream>
 
+#include <ntcore_cpp.h>
 #include <frc/smartdashboard/SmartDashboard.h>
 #include "subsystems/TankDriveSubsystem.h"
 #include "T34_XboxController.h"
-
-std::shared_ptr<Lua> p_lua;
 
 void Robot::RobotInit() 
 {
@@ -24,8 +23,9 @@ void Robot::RobotInit()
 
     m_tank_drive = TankDriveSubsystem::GetInstance();
     m_driver_controller.reset(new T34_XboxController(RobotMap::DRIVER1_JOYSTICK_PORT));
-
-    p_lua = Lua::GetLua();
+    
+    //NT_Inst inst = NT_GetDefaultInstance();
+    //NT_AddEntryListener(inst, "", 0, &m_chooser, ScriptUpdater, NT_NOTIFY_NEW | NT_NOTIFY_UPDATE);
 }
 
 /**

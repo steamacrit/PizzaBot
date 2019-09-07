@@ -9,6 +9,7 @@
 
 #include <frc/XboxController.h>
 
+// Enumeration for specifying the target axis in a generic function
 enum class AxisType
 {
     Trigger,
@@ -17,6 +18,7 @@ enum class AxisType
     ZAxis
 };
 
+// Subclass of the frc::XboxController adding extra functionality
 class T34_XboxController : public frc::XboxController
 {
 public: // PUBLIC METHODS

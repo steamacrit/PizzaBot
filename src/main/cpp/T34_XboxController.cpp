@@ -7,6 +7,7 @@
 
 #include "T34_XboxController.h"
 
+// Constructor - Call base class constructor and Setup default values for data
 T34_XboxController::T34_XboxController(int32_t port) 
     : XboxController(port)
     , m_left_x_db(0.0)
@@ -19,6 +20,7 @@ T34_XboxController::T34_XboxController(int32_t port)
 
 }
 
+// Sets a deadband range for a given axis of the controller
 void T34_XboxController::SetAxisDeadband(frc::GenericHID::JoystickHand hand, AxisType axis, double value)
 {
     // Clamp value from 0.0 to 1.0 
